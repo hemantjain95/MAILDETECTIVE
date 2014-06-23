@@ -1,0 +1,24 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<%@ page import="check.test4query"  %>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here sczxcascc</title>
+<% String s;
+test4query dem = new test4query();
+test4query de = new test4query();
+test4query d = new test4query();
+s=request.getParameter("itemId");
+demo.mai("SELECT ?x WHERE { ?y <MESSAGEID:>"+s+" . ?y <SUB:> ?x} LIMIT 30 ");
+
+
+
+
+%>
+</head>
+<body>
+
+</body>
+</html>

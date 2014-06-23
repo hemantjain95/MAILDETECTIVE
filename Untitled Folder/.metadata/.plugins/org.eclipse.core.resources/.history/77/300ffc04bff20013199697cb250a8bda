@@ -1,0 +1,42 @@
+import java.util.Properties;
+
+import javax.mail.Folder;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.NoSuchProviderException;
+import javax.mail.Session;
+import javax.mail.Store;
+import javax.mail.*;
+
+public class mailchecker {
+
+public static void main(String args[]) {
+Properties props = System.getProperties();
+props.setProperty("mail.store.protocol", "imaps");
+try {   //System.out.println("hi");
+Session session = Session.getDefaultInstance(props, null);
+Store store = session.getStore("imaps");
+store.connect("imap.gmail.com", "<username>", "password");
+System.out.println(store);
+
+Folder inbox = store.getFolder("Inbox");
+inbox.open(Folder.READ_ONLY);
+Message messages[] = inbox.getMessages();
+for(Message message:messages) {
+System.out.println(message);
+}
+
+        } catch (NoSuchProviderException e) {
+            //e.printStackTrace();
+            //System.out.println("hi");
+            System.exit(1);
+        } catch (MessagingException e) {
+            //e.printStackTrace();
+            System.out.println("hi");
+            System.exit(2);
+        }
+        
+
+    }
+
+}

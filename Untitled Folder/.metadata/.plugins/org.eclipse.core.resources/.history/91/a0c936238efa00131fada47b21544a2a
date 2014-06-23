@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<%@ page import="check.test5query"  %>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="shortcut icon" href="ico/E-Mail.ico">
+<title>Mail Detective</title>
+<% String s;
+test5query dem = new test5query();
+test5query de = new test5query();
+test5query d = new test5query();
+String[] id =new String[1];
+String[] dat =new String[1];
+String[] nam =new String[1];
+s=request.getParameter("itemId");
+dem.mai("SELECT ?x WHERE { ?y <MESSAGEID:> '"+s+ "' . ?y <SUB:> ?x} LIMIT 1 ");
+id[0]=test5query.arr[0];
+out.println("SUBJECT:"+id[0]+"<br>");
+dem.mai("SELECT ?x WHERE { ?y <MESSAGEID:> '"+s+ "' . ?y <FROM:> ?x} LIMIT 1 ");
+id[0]=test5query.arr[0];
+out.println("FROM:"+id[0]+"<br>");
+dem.mai("SELECT ?x WHERE { ?y <MESSAGEID:> '"+s+ "' . ?y <DATE:> ?x} LIMIT 1 ");
+id[0]=test5query.arr[0];
+out.println("DATE:"+id[0]+"<br>");
+dem.mai("SELECT ?x WHERE { ?y <MESSAGEID:> '"+s+ "' . ?y <CONTENT:> ?x} LIMIT 1 ");
+id[0]=test5query.arr[0];
+out.println("CONTENT:"+id[0]+"<br>");
+
+
+
+%>
+</head>
+<body>
+
+</body>
+</html>

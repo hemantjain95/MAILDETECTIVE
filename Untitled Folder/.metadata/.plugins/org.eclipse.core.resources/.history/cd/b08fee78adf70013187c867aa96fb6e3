@@ -1,0 +1,380 @@
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+  <% String[] arr=new String[30]; 
+  arr[0]=request.getParameter("subject");
+  //System.out.println(subject);
+  arr[1]=request.getParameter("subjectand");
+  //System.out.println(subjectand);
+  arr[2]=request.getParameter("subjector");
+  //System.out.println(subjector);
+  arr[3]=request.getParameter("content");
+  //System.out.println(content);
+  arr[4]=request.getParameter("contentand");
+  //System.out.println(contentand);
+  arr[5]=request.getParameter("contentor");
+  //System.out.println(contentor);
+  arr[6]=request.getParameter("attachment");
+  //System.out.println(attachment);
+  arr[7]=request.getParameter("attachmentand");
+  //System.out.println(attachmentand);
+  arr[8]=request.getParameter("attachmentor");
+  //System.out.println(attachmentor);
+  arr[9]=request.getParameter("from");
+  //System.out.println(from);
+  arr[10]=request.getParameter("fromand");
+  //System.out.println(fromand);
+  arr[11]=request.getParameter("fromor");
+  //System.out.println(fromor);
+  arr[12]=request.getParameter("to");
+  //System.out.println(to);
+  arr[13]=request.getParameter("toand");
+  //System.out.println(toand);
+  arr[14]=request.getParameter("toor");
+  //System.out.println(toor);
+  arr[15]=request.getParameter("reply");
+  //System.out.println(reply);
+  arr[16]=request.getParameter("replyand");
+  //System.out.println(replyand);
+  arr[17]=request.getParameter("replyor");
+  //System.out.println(replyor);
+  arr[18]=request.getParameter("cc");
+  //System.out.println(cc);
+  arr[19]=request.getParameter("ccand");
+  //System.out.println(ccand);
+  arr[20]=request.getParameter("ccor");
+  //System.out.println(ccor);
+  arr[21]=request.getParameter("bcc");
+  //System.out.println(bcc);
+  arr[22]=request.getParameter("bccand");
+  //System.out.println(bccand);
+  arr[23]=request.getParameter("bccor");
+  //System.out.println(bccor);
+  arr[24]=request.getParameter("date");
+  //System.out.println(date);
+  arr[25]=request.getParameter("dateand");
+  //System.out.println(dateand);
+  arr[26]=request.getParameter("dateor");
+  //System.out.println(dateor);
+  
+  
+  %>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="ico/E-Mail.ico">
+
+    <title>Mail Detective</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/hover.css" rel="stylesheet">
+     <link href="css/button.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <style>
+    	a, u {
+    			text-decoration: none;
+			}
+    </style>
+  </head>
+
+  <body>
+  
+	<% int value=Integer.parseInt(request.getParameter("item"));
+     			int value1=value+30;%> 
+     			
+     			
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-brand" href="index.jsp">Mail Detective</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">E-Mails</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right" onsubmit="action='Search.jsp'" method="get">
+            <input type="text" class="form-control" placeholder="Search..." name="search">
+            <input type="hidden" name="item" value="<%=0%>">  
+      
+
+          
+          <!--  a href="index.jsp"><input type="submit" value=login style="color: transparent; background-color: transparent; border-color: transparent; cursor: default;"></a-->
+          </form>
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="gmail_like.jsp?item=<%=value%>">Inbox</a></li>
+            <li><a href="Starred.jsp?item=<%=0%>">Starred</a></li>
+            <li><a href="Spam.jsp?item=<%=0%>">Spam</a></li>
+            <li><a href="Sentmail.jsp?item=<%=0%>">Sentmail</a></li>
+            <li><a href="Drafts.jsp?item=<%=0%>">Drafts</a></li>
+            <li><a href="Trash.jsp?item=<%=0%>">Trash</a></li>
+            <li><a href="Allmail.jsp?item=<%=0%>">All</a></li>
+            <li><div style="margin-top:50%;margin-left:27%;color:#428bca;"><strong>Active Filters</strong></strong></div></li><hr style="margin-top:2%;padding:0;">
+          </ul>
+          <ul>
+            <div id="post" style="margin-top:-4%"></div>
+        <%int k;
+        for(k=0;k<1;k++)
+        { if(arr[k]!=null&&!arr[k].equals(""))
+        	out.println("<a href='#'> "+arr[k]+"<i class=' fa-times-circle'>"+"</a>");
+        }
+        %>
+          </ul>
+        </div>
+     </div>
+     </div> 
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top:0px">
+          <a href="gmail_like.jsp?item=<%=value-30%>" class="classname" style=" margin-top:20px;margin-left:800px;"><p> < </p></a>
+			<a href="gmail_like.jsp?item=<%=value+30%>" class="classname1" > > </a>
+     <h1 class="page-header" style=" margin-top:-40px;">E-Mails</h1>   
+     <h4 class="page-header" style=" margin-top:-50px; margin-left:720px;"><%out.println(value+"-"+value1); %></h4>  
+        
+     
+      
+          
+			
+          <!--<div class="row placeholders">
+          </div>!-->
+
+          <!--<h2 class="sub-header"></h2>-->
+<!--NOTIFICATION STARTS-->
+              
+                <div class="container-fluid " style="margin-top:0%;margin-left:65%;width:27%;" >
+               
+                    <div class="panel panel-default ">
+                        <div class="panel-heading ">
+                            <i class="fa fa-search fa-fw"></i> Search Panel
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <form class="list-group-item"  method="get" onsubmit="action='gmail_like.jsp'"> 
+    							 <input type="hidden" name="item" value="<%=0%>">  
+    				 			<i class="fa fa-arrow-circle-right fa-fw "></i> <span  action="gmail_like.jsp" onclick="document.getElementById('div1').style.display = 'block';"  style="margin-left:1%">Subject </span>	
+                                <span action="gmail_like.jsp" class=" text-muted small"  onclick="document.getElementById('div19').style.display = 'block';"  style="margin-left:40%"><em> And <i class="fa  fa-angle-down "></i></em>
+                                </span>
+                              
+                                 <span class=" text-muted small"  onclick="document.getElementById('div20').style.display = 'block';" style="margin-left:3%"><em>OR <i class="fa fa-angle-down"></i></em>
+                                </span>
+                                
+                                <div id="div1" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div1').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="subject" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div19" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div19').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="subjectand" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div20" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div20').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="subjector" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+
+                                <input type="submit" style="position: absolute; left: -9999px"/>
+                                
+                                </form>
+                                <form class="list-group-item" method="get" onsubmit="action='gmail_like.jsp'">
+    							<i class="fa fa-clipboard fa-fw "></i> <span onclick="document.getElementById('div21').style.display = 'block';setValue('Content')"  style="margin-left:1%">Content </span>	
+                                <span class=" text-muted small"  onclick="document.getElementById('div22').style.display = 'block';"  style="margin-left:40%"><em> And <i class="fa  fa-angle-down "></i></em>
+                                </span>
+                              
+                                 <span class=" text-muted small"  onclick="document.getElementById('div23').style.display = 'block';" style="margin-left:3%"><em>OR <i class="fa fa-angle-down"></i></em>
+                                </span>
+                                
+                                <div id="div21" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div21').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name1" name="content" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div22" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div22').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name1" name="contentand" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div23" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div23').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name1" name="contentor" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <input type="submit" style="position: absolute; left: -9999px"/>
+                                </form>
+                                <form class="list-group-item" method="get" onsubmit="action='gmail_like.jsp'">
+    							<i class="fa fa-paperclip fa-fw "></i> <span onclick="document.getElementById('div24').style.display = 'block';"  style="margin-left:1%">Attachments </span>	
+                                <span class=" text-muted small"  onclick="document.getElementById('div25').style.display = 'block';"  style="margin-left:28%"><em> And <i class="fa  fa-angle-down "></i></em>
+                                </span>
+                              
+                                 <span class=" text-muted small"  onclick="document.getElementById('div26').style.display = 'block';" style="margin-left:3%"><em>OR <i class="fa fa-angle-down"></i></em>
+                                </span>
+                                
+                                <div id="div24" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div24').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name2" name="attachment" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                 <div id="div25" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div25').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name2" name="attachmentand" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                  <div id="div26" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div26').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name2" name="attachmentor" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                    <input type="submit" style="position: absolute; left: -9999px"/>
+                                </form>
+                               <form class="list-group-item" method="get" onsubmit="action='gmail_like.jsp'">
+    							<i class="fa fa-hand-o-right fa-fw "></i> <span onclick="document.getElementById('div27').style.display = 'block';"  style="margin-left:1%">TO </span>	
+                                <span class=" text-muted small"  onclick="document.getElementById('div28').style.display = 'block';"  style="margin-left:50%"><em> And <i class="fa  fa-angle-down "></i></em>
+                                </span>
+                              
+                                 <span class=" text-muted small"  onclick="document.getElementById('div29').style.display = 'block';" style="margin-left:3%"><em>OR <i class="fa fa-angle-down"></i></em>
+                                </span>
+                                
+                                <div id="div27" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div27').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name3" name="to" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div28" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div28').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="toand" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                 <div id="div29" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div29').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="toor" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div> 
+                                <input type="submit" style="position: absolute; left: -9999px"/>
+                                </form>
+                                <form class="list-group-item" method="get" onsubmit="action='gmail_like.jsp'">
+    							<i class="fa fa-hand-o-left fa-fw "></i> <span onclick="document.getElementById('div30').style.display = 'block';"  style="margin-left:1%">FROM </span>	
+                                <span class=" text-muted small"  onclick="document.getElementById('div31').style.display = 'block';"  style="margin-left:42%"><em> And <i class="fa  fa-angle-down "></i></em>
+                                </span>
+                              
+                                 <span class=" text-muted small"  onclick="document.getElementById('div32').style.display = 'block';" style="margin-left:3%"><em>OR <i class="fa fa-angle-down"></i></em>
+                                </span>
+                                <div id="div30" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div30').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="from" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div31" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div31').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name4" name="fromand" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div32" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div32').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="fromor" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <input type="submit" style="position: absolute; left: -9999px"/>
+                                </form>
+                                 <form class="list-group-item" method="get" onsubmit="action='gmail_like.jsp'">
+    							<i class="fa fa-mail-forward fa-fw "></i> <span onclick="document.getElementById('div33').style.display = 'block';"  style="margin-left:1%">CC </span>	
+                                <span class=" text-muted small"  onclick="document.getElementById('div34').style.display = 'block';"  style="margin-left:50%"><em> And <i class="fa  fa-angle-down "></i></em>
+                                </span>
+                              
+                                 <span class=" text-muted small"  onclick="document.getElementById('div35').style.display = 'block';" style="margin-left:3%"><em>OR <i class="fa fa-angle-down"></i></em>
+                                </span>
+                                <div id="div33" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div33').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="cc" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div34" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div34').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="ccand" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div35" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div35').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name5" name="ccor" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <input type="submit" style="position: absolute; left: -9999px"/>
+                                </form>
+                                <form class="list-group-item" method="get" onsubmit="action='gmail_like.jsp'">
+    							<i class="fa fa-mail-reply-all fa-fw "></i> <span onclick="document.getElementById('div36').style.display = 'block';"  style="margin-left:1%">BCC </span>	
+                                <span class=" text-muted small"  onclick="document.getElementById('div37').style.display = 'block';"  style="margin-left:46%"><em> And <i class="fa  fa-angle-down "></i></em>
+                                </span>
+                              
+                                 <span class=" text-muted small"  onclick="document.getElementById('div38').style.display = 'block';" style="margin-left:3%"><em>OR <i class="fa fa-angle-down"></i></em>
+                                </span>
+                                <div id="div36" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div36').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="bcc" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div37" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div37').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="bccand" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div38" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div38').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name6" name="bccor" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <input type="submit" style="position: absolute; left: -9999px"/>
+                                </form>
+                               <form class="list-group-item" method="get" onsubmit="action='gmail_like.jsp'">
+    							<i class="fa fa-calendar fa-fw "></i> <span onclick="document.getElementById('div39').style.display = 'block';"  style="margin-left:1%">Date </span>	
+                                <span class=" text-muted small"  onclick="document.getElementById('div40').style.display = 'block';"  style="margin-left:46%"><em> And <i class="fa  fa-angle-down "></i></em>
+                                </span>
+                              
+                                 <span class=" text-muted small"  onclick="document.getElementById('div41').style.display = 'block';" style="margin-left:3%"><em>OR <i class="fa fa-angle-down"></i></em>
+                                </span>
+                                <div id="div39" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div39').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="date" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div40" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div40').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="dateand" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div41" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div41').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name7" name="dateor" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <input type="submit" style="position: absolute; left: -9999px"/>
+                                </form>
+                                <form class="list-group-item" method="get" onsubmit="action='gmail_like.jsp'">
+    							<i class="fa fa-file-text fa-fw "></i> <span onclick="document.getElementById('div42').style.display = 'block';"  style="margin-left:1%">In Reply To </span>	
+                                <span class=" text-muted small"  onclick="document.getElementById('div43').style.display = 'block';"  style="margin-left:30%"><em> And <i class="fa  fa-angle-down "></i></em>
+                                </span>
+                              
+                                 <span class=" text-muted small"  onclick="document.getElementById('div44').style.display = 'block';" style="margin-left:3%"><em>OR <i class="fa fa-angle-down"></i></em>
+                                </span>
+                                <div id="div42" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div42').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="reply" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div43" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div43').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name" name="replyand" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <div id="div44" style="display:none;margin-left:10%;margin-top:2%;" onmouseout="document.getElementById('div44').style.display = 'none';"><input class="textbox" type="text" placeholder="Enter Value" id="name8" name="replyor" style="width:100%" onmouseout="if(this.value) {this.value=''}"></div>
+                                <input type="submit" style="position: absolute; left: -9999px"/>
+                                </form>
+                               <form class="list-group-item" method="get" onsubmit="action='gmail_like.jsp'">
+    							<i class="fa fa-check fa-fw "></i> <span style="margin-left:1%">Has Attachments</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="checkbox" id="name9" onclick="setValue('HasAttch')" >
+                                <input type="submit" style="position: absolute; left: -9999px"/>
+                                </form>
+                            </div>
+                            <!-- /.list-group -->
+                            <a href="#" class="btn btn-default btn-block">View All Alerts</a>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+              <!--NOTIFICATION ENDS-->
+         	
+
+          <div  class="table-responsive" style="margin-top:-570px;margin-left:-940px;font-size:15px;width:900px;background-color: #f5f5f5">
+           
+            <table class="table table-striped">
+       
+             <%@ page import="check.test4query"  %>
+            <% test4query demo = new test4query();
+            
+            //out.println(value);
+            test4query dem = new test4query();
+            test4query de = new test4query();
+            test4query d = new test4query();
+            String[] id =new String[30];
+            String[] dat =new String[30];
+            String[] nam =new String[30];
+            String[] mailid =new String[30];
+            int i;
+           demo.mai("SELECT ?x WHERE { ?y <FOLDERNAME:> 'inbox' . ?y <SUB:> ?x} LIMIT 30 OFFSET"+value);
+           for(i=0;i<30;i++)
+           {   id[i]=test4query.arr[i];
+           		id[i] = id[i].substring(0, Math.min(id[i].length(), 100));
+           }
+          dem.mai("SELECT ?x WHERE { ?y <FOLDERNAME:> 'inbox' . ?y <DATE:> ?x} LIMIT 30 OFFSET"+value);
+           for(i=0;i<30;i++)
+           {   dat[i]=test4query.arr[i];
+           		dat[i] = dat[i].substring(0, Math.min(dat[i].length(), 19));
+           }
+           de.mai("SELECT ?x WHERE { ?y <FOLDERNAME:> 'inbox' . ?y <SENDERNAME:> ?x} LIMIT 30 OFFSET"+value);
+           for(i=0;i<30;i++)
+           {   nam[i]=test4query.arr[i];
+           		nam[i] = nam[i].substring(0, Math.min(nam[i].length(), 16));
+           }
+           demo.mai("SELECT ?x WHERE { ?y <FOLDERNAME:> 'inbox' . ?y <MESSAGEID:> ?x} LIMIT 30 OFFSET"+value);
+           for(i=0;i<30;i++)
+           {   mailid[i]=test4query.arr[i];
+           		//mailid[i] = mailid[i].substring(0, Math.min(id[i].length(), 100));
+           }
+          
+            for(i=0;i<30;i++)
+            { //id[i]=test4query.arr[i];
+            if(!id[i].equals("hi"))
+            	out.println("<tr height='5'><td width='120'style='font-size:15px'>"+nam[i]+"</td><td width='400'>"+"<a href='final.jsp?itemId="+mailid[i]+"' class='button grow' style=' text-decoration: none; color:black;font-size:15px;'>"+"&nbsp&nbsp&nbsp&nbsp"+id[i]+"<hr style='border-color:#E6E6E6;padding:0px;margin:0px'>"+"</a>"+"</td><td width='90' style='font-size:12px'>"+""+dat[i]+"</td>"+"</tr>");
+            else 
+            	break;
+            }i--;	
+            %>
+           
+            </table>
+          </div>
+         
+       
+      </div>
+      
+    </div>
+	
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/docs.min.js"></script>
+   
+    <script src="js/script.js"></script>
+    <script src="js/sorttable.js"></script>
+    <script src="js/datetime.js"></script>
+  </body>
+</html>
