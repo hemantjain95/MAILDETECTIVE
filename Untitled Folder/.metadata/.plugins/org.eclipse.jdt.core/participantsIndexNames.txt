@@ -1,7 +1,0 @@
-INDEX VERSION 1.126
-/home/hemant/Downloads/eclipse/Untitled Folder/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3082874910.index
-/test/src
-/home/hemant/Downloads/eclipse/Untitled Folder/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3166076078.index
-/test/src
-/home/hemant/Downloads/eclipse/Untitled Folder/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3487585874.index
-/maildetective1.0/src
